@@ -1,0 +1,26 @@
+__pycache__/
+build/
+dist/
+*.spec
+.venv
+.vscode
+steamcmd/
+
+# Local-only data: never publish game files, backups, or credentials.
+backups/
+downloads/
+logs/
+*.log
+*.zip
+*.tar.gz
+*.dll
+*.pdb
+*.dmp
+*.bak
+*.gi
+.env
+.env.*
+!.env.example
+.idea/
+Thumbs.db
+.DS_Store
