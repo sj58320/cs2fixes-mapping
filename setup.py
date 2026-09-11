@@ -13,7 +13,7 @@ import requests
 
 from common import get_cs2_path
 
-# Keep this pair explicit: CS2Fixes v1.20 requires Metamod build 1411 or earlier.
+# Keep this pair explicit: CS2Fixes v1.20.1 requires Metamod build 1411 or earlier.
 # Do not automatically upgrade Metamod to a KHook-based release.
 PACKAGES = (
     (
@@ -24,8 +24,8 @@ PACKAGES = (
     ),
     (
         "https://github.com/Source2ZE/CS2Fixes/releases/download/"
-        "v1.20/CS2Fixes-v1.20-windows.zip",
-        "b4188a9f19c5ec74beedecc4ae61242bc3d94743d494da9cf12d4a7c873d608a",
+        "v1.20.1/CS2Fixes-v1.20.1-windows.zip",
+        "3ea9607b6a6713a10de67c7b7787eaf4915cf9362a2d76797e7dc340e6172ca2",
         "addons/cs2fixes/bin/win64/cs2fixes.dll",
     ),
 )
@@ -98,7 +98,7 @@ def main():
            for p in psutil.process_iter(['name'])):
         raise RuntimeError('Close CS2 and Workshop Tools before installation.')
 
-    print('Installing Metamod 2.0.0-dev+1403 and official CS2Fixes v1.20.')
+    print('Installing Metamod 2.0.0-dev+1403 and official CS2Fixes v1.20.1.')
     print('No KZ FGD/assets or custom ConVar presets will be installed.')
     archives = []
     try:

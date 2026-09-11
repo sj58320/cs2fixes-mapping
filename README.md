@@ -12,7 +12,7 @@ A Windows launcher adapted from [zer0k-z/cs2kz-mapping](https://github.com/zer0k
 | 구성 요소 | 버전 |
 | --- | --- |
 | Metamod:Source | `2.0.0-dev+1403` — Windows |
-| CS2Fixes | `v1.20` — Source2ZE 공식 Windows 배포판 |
+| CS2Fixes | `v1.20.1` — Source2ZE 공식 Windows 배포판 |
 
 ## 준비 사항
 
@@ -113,7 +113,7 @@ Windows 설정에서 **개발자 모드**를 켜거나, 터미널을 **관리자
 | Component | Version |
 | --- | --- |
 | Metamod:Source | `2.0.0-dev+1403` — Windows |
-| CS2Fixes | `v1.20` — official Source2ZE Windows release |
+| CS2Fixes | `v1.20.1` — official Source2ZE Windows release |
 
 ## Requirements
 
