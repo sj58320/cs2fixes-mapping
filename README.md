@@ -11,8 +11,8 @@ A Windows launcher adapted from [zer0k-z/cs2kz-mapping](https://github.com/zer0k
 
 | 구성 요소 | 버전 |
 | --- | --- |
-| Metamod:Source | `2.0.0-dev+1403` — Windows |
-| CS2Fixes | `v1.20.1` — Source2ZE 공식 Windows 배포판 |
+| Metamod:Source | `2.0.0-dev+1472` — Windows |
+| CS2Fixes | `v2.0` — Source2ZE 공식 Windows 배포판 (KHook 기반) |
 
 ## 준비 사항
 
@@ -66,7 +66,7 @@ meta version
 meta list
 ```
 
-Metamod 버전이 `2.0.0-dev+1403`인지, CS2Fixes가 정상 로드되었는지 확인하세요. 런처의 DLL 감지는 플러그인 초기화 성공까지 보장하지 않습니다.
+Metamod 버전이 `2.0.0-dev+1472`인지, CS2Fixes가 정상 로드되었는지 확인하세요. 런처의 DLL 감지는 플러그인 초기화 성공까지 보장하지 않습니다.
 
 ## CS2Fixes 설정 적용
 
@@ -112,8 +112,8 @@ Windows 설정에서 **개발자 모드**를 켜거나, 터미널을 **관리자
 
 | Component | Version |
 | --- | --- |
-| Metamod:Source | `2.0.0-dev+1403` — Windows |
-| CS2Fixes | `v1.20.1` — official Source2ZE Windows release |
+| Metamod:Source | `2.0.0-dev+1472` — Windows |
+| CS2Fixes | `v2.0` — official Source2ZE Windows release (KHook-based) |
 
 ## Requirements
 
@@ -167,7 +167,7 @@ meta version
 meta list
 ```
 
-Confirm Metamod reports `2.0.0-dev+1403` and CS2Fixes is loaded successfully. DLL detection by the launcher does not guarantee successful plugin initialization.
+Confirm Metamod reports `2.0.0-dev+1472` and CS2Fixes is loaded successfully. DLL detection by the launcher does not guarantee successful plugin initialization.
 
 ## Applying CS2Fixes settings
 
