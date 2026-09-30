@@ -18,13 +18,22 @@ A Windows launcher adapted from [zer0k-z/cs2kz-mapping](https://github.com/zer0k
 
 - Windows
 - Steam, CS2 및 **CS2 Workshop Tools** DLC
-- **Python 3.10 이상** (`py` 명령 사용 가능)
-- **Git** — Python의 VDF 의존성 설치에 필요
-- **Windows 개발자 모드** 또는 **관리자 권한 터미널** — 임시 심볼릭 링크 생성에 필요
+- **Python 3.10 이상** (`py` 명령 사용 가능) — Python 방식만
+- **Git** — Python의 VDF 의존성 설치에 필요, Python 방식만
+- **Windows 개발자 모드** 또는 **관리자 권한 터미널** — 임시 심볼릭 링크 생성에 필요, Python 방식만 (exe는 실행 시 관리자 권한을 요청)
 
 설치 및 런처 실행 전에는 **CS2와 Workshop Tools를 종료**하세요.
 
-## 사용법
+## exe로 사용하기 (Python 불필요)
+
+[Releases](https://github.com/sj58320/cs2fixes-mapping/releases/latest)에서 `setup.exe`와 `run-mapping.exe`를 **같은 폴더**에 내려받습니다.
+
+1. `setup.exe`를 실행해 Metamod와 CS2Fixes를 설치합니다. 버전이 바뀐 새 릴리즈를 받았을 때도 다시 실행합니다.
+2. `run-mapping.exe`를 실행하고 관리자 권한 요청을 허용합니다. 이후 과정은 아래 [2. Hammer 실행](#2-hammer-실행)과 같습니다.
+
+백업은 exe가 있는 폴더의 `backups/`에 저장됩니다. 코드 서명이 없는 PyInstaller 실행 파일이라 SmartScreen 경고나 백신 오탐이 발생할 수 있습니다. 걱정되면 `SHA256SUMS.txt`로 해시를 확인하거나 아래 Python 방식을 사용하세요.
+
+## 사용법 (Python 방식)
 
 ### 1. 최초 설치
 
@@ -97,6 +106,8 @@ Windows 설정에서 **개발자 모드**를 켜거나, 터미널을 **관리자
 ```powershell
 .\.venv\Scripts\python.exe setup.py --cs2-path "<CS2 설치 폴더>"
 .\.venv\Scripts\python.exe run-mapping.py --cs2-path "<CS2 설치 폴더>"
+.\setup.exe --cs2-path "<CS2 설치 폴더>"
+.\run-mapping.exe --cs2-path "<CS2 설치 폴더>"
 ```
 
 지정한 폴더 아래에 `game/bin/win64/cs2.exe`가 있어야 합니다.
@@ -119,13 +130,22 @@ Windows 설정에서 **개발자 모드**를 켜거나, 터미널을 **관리자
 
 - Windows
 - Steam, CS2, and the **CS2 Workshop Tools** DLC
-- **Python 3.10+**, with the `py` command available
-- **Git**, required to install the Python VDF dependency
-- **Windows Developer Mode** or an **administrator terminal**, required for temporary symlinks
+- **Python 3.10+**, with the `py` command available — Python method only
+- **Git**, required to install the Python VDF dependency — Python method only
+- **Windows Developer Mode** or an **administrator terminal**, required for temporary symlinks — Python method only (the exe requests administrator rights on launch)
 
 **Close CS2 and Workshop Tools** before installation or launching.
 
-## Usage
+## Using the executables (no Python required)
+
+Download `setup.exe` and `run-mapping.exe` from [Releases](https://github.com/sj58320/cs2fixes-mapping/releases/latest) into **the same folder**.
+
+1. Run `setup.exe` to install Metamod and CS2Fixes. Run it again whenever you download a release with new package versions.
+2. Run `run-mapping.exe` and accept the administrator prompt. The rest matches [2. Launch Hammer](#2-launch-hammer) below.
+
+Backups are stored in `backups/` next to the executables. They are unsigned PyInstaller builds, so SmartScreen warnings or antivirus false positives may occur. If concerned, check hashes against `SHA256SUMS.txt` or use the Python method below.
+
+## Usage (Python method)
 
 ### 1. Initial setup
 
@@ -198,6 +218,8 @@ Specify the installation directory manually. Replace the placeholder with the ac
 ```powershell
 .\.venv\Scripts\python.exe setup.py --cs2-path "<CS2 installation directory>"
 .\.venv\Scripts\python.exe run-mapping.py --cs2-path "<CS2 installation directory>"
+.\setup.exe --cs2-path "<CS2 installation directory>"
+.\run-mapping.exe --cs2-path "<CS2 installation directory>"
 ```
 
 The selected directory must contain `game/bin/win64/cs2.exe`.

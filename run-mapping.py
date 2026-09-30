@@ -9,7 +9,7 @@ import time
 
 import psutil
 
-from common import get_cs2_path, modify_gameinfo
+from common import get_cs2_path, modify_gameinfo, run_cli
 
 
 def cs2_processes():
@@ -76,7 +76,7 @@ def main():
                      root / 'game/csgo/addons/metamod/bin/win64/metamod.2.cs2.dll',
                      root / 'game/csgo/addons/cs2fixes/bin/win64/cs2fixes.dll'):
         if not required.is_file():
-            raise RuntimeError(f'Missing {required.name}. Install Workshop Tools and run setup.py first.')
+            raise RuntimeError(f'Missing {required.name}. Install Workshop Tools and run setup first.')
     if any((p.info.get('name') or '').lower() in ('cs2.exe', 'csgocfg.exe')
            for p in psutil.process_iter(['name'])):
         raise RuntimeError('Close CS2 and Workshop Tools before starting this launcher.')
@@ -124,4 +124,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    run_cli(main)

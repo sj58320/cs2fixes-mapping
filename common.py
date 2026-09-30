@@ -7,6 +7,8 @@ import urllib.request
 import vdf
 import shutil
 import re
+import traceback
+from pathlib import Path
 
 GAMEINFO_BASE_URL = 'https://raw.githubusercontent.com/SteamDatabase/GameTracking-CS2/refs/heads/master/'
 GAMEINFO_FILE_PATHS = [os.path.join('game', 'csgo', 'gameinfo.gi'), os.path.join('game', 'csgo_core', 'gameinfo.gi')]
@@ -36,6 +38,29 @@ def ensure_admin():
         print("Elevation was cancelled or failed. Please re-run this program as Administrator.")
         time.sleep(3)
     sys.exit(0)
+
+def app_dir():
+    """Directory holding this tool: the exe itself when frozen, not PyInstaller's temp extraction dir."""
+    if getattr(sys, 'frozen', False):
+        return Path(sys.executable).resolve().parent
+    return Path(__file__).resolve().parent
+
+def run_cli(main):
+    """Run an entry point; a double-clicked exe keeps its console open so messages stay readable."""
+    if not getattr(sys, 'frozen', False):
+        main()
+        return
+    code = 0
+    try:
+        main()
+    except RuntimeError as error:
+        print(f'Error: {error}')
+        code = 1
+    except Exception:
+        traceback.print_exc()
+        code = 1
+    input('Press Enter to close this window...')
+    sys.exit(code)
 
 def download_gameinfo_file(path, relative_path):
     """Download a single gameinfo.gi file from SteamDatabase's GameTracking-CS2 repo."""

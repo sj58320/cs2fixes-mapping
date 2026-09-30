@@ -11,7 +11,7 @@ import zipfile
 import psutil
 import requests
 
-from common import get_cs2_path
+from common import app_dir, get_cs2_path, run_cli
 
 # Keep this pair explicit: CS2Fixes v2.0 uses KHook and requires Metamod build 1470 or later.
 PACKAGES = (
@@ -103,7 +103,7 @@ def main():
     try:
         # Download and verify both packages before touching the game directory.
         archives = [download_package(*package) for package in PACKAGES]
-        backup = Path(__file__).resolve().parent / 'backups' / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+        backup = app_dir() / 'backups' / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
         csgo = root / 'game/csgo'
         install_packages(archives, csgo, backup)
         asset = csgo / 'readonly_tools_asset_info.bin'
@@ -127,4 +127,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    run_cli(main)
